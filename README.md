@@ -7,7 +7,7 @@ from PIL import Image
 # Configuration & Storage Setup
 # ----------------------------------------------------
 st.set_page_config(
-    page_title="Hridoy Study Hub",
+    page_title="hridoystudyhub",
     page_icon="📚",
     layout="wide",
     initial_sidebar_state="expanded"
