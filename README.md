@@ -7,7 +7,7 @@ from PIL import Image
 # Configuration & Storage Setup
 # ----------------------------------------------------
 st.set_page_config(
-    page_title="Exam Prep Hub",
+    page_title="Hridoy Study Hub",
     page_icon="📚",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -19,7 +19,7 @@ META_FILE = os.path.join(DATA_DIR, "metadata.json")
 
 os.makedirs(UPLOADS_DIR, exist_ok=True)
 
-# Complete syllabus structure for all required sections
+# Complete syllabus structure for all requested sections
 SUBJECT_STRUCTURE = {
     "Computer Science": [
         "General IT & Architecture",
@@ -94,7 +94,10 @@ if "db" not in st.session_state:
 # ----------------------------------------------------
 # Sidebar Navigation
 # ----------------------------------------------------
-st.sidebar.title("📚 Study Portal")
+st.sidebar.title("📚 Hridoy Study Hub")
+st.sidebar.caption("Exam Preparation & Notes Portal")
+st.sidebar.markdown("---")
+
 main_subject = st.sidebar.selectbox("Select Subject", list(SUBJECT_STRUCTURE.keys()))
 
 if main_subject == "General Knowledge":
@@ -121,7 +124,8 @@ topic_data = st.session_state.db[key_path]
 # ----------------------------------------------------
 # Header & Syllabus Completion Status
 # ----------------------------------------------------
-st.header(f"📖 {main_subject} → {topic}")
+st.title("🎯 Hridoy Study Hub")
+st.subheader(f"📖 {main_subject} → {topic}")
 
 col1, col2 = st.columns([1, 2])
 with col1:
